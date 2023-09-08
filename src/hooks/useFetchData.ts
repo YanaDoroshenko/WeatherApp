@@ -1,25 +1,29 @@
 import { useEffect, useState } from "react"
 
-export const useFetchData = <TData>(url: string, options?: RequestInit) => {
+export const useFetchData = <TData>(url: string, options?: RequestInit, isAutoRequest?: boolean) => {
     const [data, setData] = useState<TData | null>(null);
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
-    useEffect(() => {
+    const getData = () => {
         setIsLoading(true);
-        fetch(url, options)
+        return fetch(url, options)
         .then(response => response.json())
         .then(responseData => {
-            console.log(responseData)
+            // console.log(responseData)
             setData(responseData)
+            return responseData;
         })
         .catch(() => {
             setIsLoading(false);
             setData(null);
         })
+    }
+    useEffect(() => {
+        isAutoRequest && getData();
     },[url, options])
     
 
 
-    return {data, isLoading};
+    return isAutoRequest ? {data, isLoading} : getData ;
 };

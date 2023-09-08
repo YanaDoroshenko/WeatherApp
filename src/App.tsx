@@ -1,15 +1,13 @@
 import React from 'react';
 import './App.css';
 import { MainContextProvider } from './contexts/MainContext';
-import { SearchContextProvider } from './contexts/SearchContext';
+import { Weather } from './components/Weather';
 
 function App() {
   return (
     <div className="App">
       <MainContextProvider>
-        <SearchContextProvider>
-
-        </SearchContextProvider>
+        <Weather/>
       </MainContextProvider>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { MainContext } from '../contexts/MainContext'
 import { ForecastsInterface, WeatherInterface } from '../types';
 import { WeatherCard } from './WeatherCard';
+import { ForecastsCard } from './ForecastsCard';
 
 export const Forecasts = () => {
 
@@ -11,8 +12,8 @@ export const Forecasts = () => {
 
   return (
     <div className='forecasts-section'>
-        {[weather!.forecasts].map((forecasts) => (
-            <WeatherCard forecasts={forecasts} weather={null}/>
+        {weather && weather.forecasts.map((forecast) => (
+            <ForecastsCard forecastItem={forecast}/>
         ))}
         <div>
         </div>

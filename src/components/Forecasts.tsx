@@ -12,7 +12,7 @@ export const Forecasts = () => {
 
   return (
     <div className='forecasts-section'>
-        {weather && weather.forecasts.map((forecast) => (
+        {weather && weather.forecasts.slice(0, 7).map((forecast) => (
             <ForecastsCard forecastItem={forecast}/>
         ))}
         <div>

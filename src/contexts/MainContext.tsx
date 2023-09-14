@@ -5,8 +5,6 @@ interface MainContextInterface {
   weather: WeatherInterface | null;
   setWeather: Dispatch<WeatherInterface | null>;
 
-  // forecasts: ForecastsInterface[];
-
   value: string;
   setValue: Dispatch<string>;
 }

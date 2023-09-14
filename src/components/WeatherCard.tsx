@@ -4,14 +4,12 @@ import { useFetchData } from '../hooks/useFetchData';
 
 interface PropsInterface {
     weather: WeatherInterface | null;
-    // forecasts: ForecastsInterface[];
 }
 
 export const WeatherCard: FC<PropsInterface> = ({weather}) => {
 
     const options = useMemo(() => ({method: "GET"}), []);
 
-    // const {location, condition} = weather;
 // console.log(weather, "!!!!")
   if(!weather) return null;
 

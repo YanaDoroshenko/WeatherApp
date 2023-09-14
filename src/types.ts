@@ -35,10 +35,3 @@ export interface ForecastsInterface{
   low: number,
   text: string
 }
-// forecasts:0:
-// day:"Fri"
-// date:1694188800
-// high:84
-// low:55
-// text:"Sunny"
-// code:32
